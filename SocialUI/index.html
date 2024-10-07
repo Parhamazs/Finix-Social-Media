@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <title>Social Media UI</title>
+    <link rel="stylesheet" href="social.css"> <!-- link to your stylesheet -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile">
+        <div class="profile-pic">
+            <img src="{{ user.photo.url }}" alt="Profile Picture"> <!-- display user's profile picture -->
+        </div>
+        <div class="profile-info">
+            <h2>{{ user.username }}</h2>
+            <p>{{ user.first_name }} {{ user.last_name }}</p>
+            <p>{{ user.bio }}</p>
+            <p>Birthday: {{ user.birthday }}</p>
+            <p>Phone: {{ user.phone }}</p>
+        </div>
+    </section>
+
+    <!-- Post Section -->
+    <section class="post">
+        <form>
+            <textarea placeholder="What's on your mind?"></textarea>
+            <button type="submit">Post</button>
+        </form>
+        <div class="post-list">
+            <!-- display user's posts here -->
+        </div>
+    </section>
+
+    <!-- Friends Section -->
+    <section class="friends">
+        <h2>Friends</h2>
+        <ul>
+            <!-- display user's friends here -->
+        </ul>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Social Media UI</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- link to your script file -->
+</body>
 </html>
